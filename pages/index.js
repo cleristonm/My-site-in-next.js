@@ -1,65 +1,109 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
-export default function Home() {
+import Layout from '../components/layout'
+import {firebaseDatabase} from '../lib/firebaseUtils'
+import { Accordion, Card } from "react-bootstrap";
+
+
+export default function Home( {experiences} ) {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+        <title>My personel website</title>
+      </Head>      
+      <div className="text-center">
+        <Image 
+            priority
+            src="/images/profile.jpeg"
+            className="rounded-circle"
+            height={144}
+            width={144}
+            alt="My photo profile"
+        />
+        
+        <h1 className="h1 fw-bold">Cleriston Martinelo</h1>
+        <p className="lead mb-4">Software Developer</p>      
+      </div>
+      <div className="container">                      
+      
+        <div className="row justify-content-center">
+          {experiences.map( (xp, index) => (
+            <Accordion key={`accordion_${xp.key}`} className="col-sm-12 col-md-10 col-lg-8 mb-2 gx-0">
+            <Card key={`accordion_${xp.key}`}>
+                <Accordion.Toggle as={Card.Header} eventKey={xp.key}>
+                {xp.start_date} - {xp.end_date} - {xp.company} <br/>{xp.title}  - {index}            
+                </Accordion.Toggle>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+                <Accordion.Collapse eventKey={xp.key}>
+                    <Card.Body>{xp.description}</Card.Body>
+                </Accordion.Collapse>
+            </Card>                        
+            </Accordion>
+          ))}                 
+          </div>          
+      
+      </div>
+      
+      {/* <Accordion>
+        <Card>
+            <Accordion.Toggle as={Card.Header} eventKey="0">
+                TAB 1
+            </Accordion.Toggle>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+            <Accordion.Collapse eventKey="0">
+                <Card.Body>This is first tab body</Card.Body>
+            </Accordion.Collapse>
+        </Card>                        
+    </Accordion>
+     
+      <div className="row justify-content-md-center">      
+          <div className="col-sm-12 col-md-10 col-lg-8 accordion" id="accordionXP">        
+          {experiences.map( (xp) => (
+            <div className="accordion-item mb-2" key={xp.key}>
+              <h2 className="accordion-header" id="heading{xp.key}">        
+                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{xp.key}" aria-expanded="false" aria-controls="collapse{xp.key}">
+                {xp.start_date} - {xp.end_date} - {xp.company} <br/>{xp.title}              
+                </button>              
+              </h2>
+              <div id="collapse{xp.key}" className="accordion-collapse collapse show" aria-labelledby="heading{xp.key}" data-bs-parent="#accordionXP">
+                <div className="accordion-body">
+                {xp.description}
+                </div>
+              </div>              
+            </div>          
+          ))}       
+        </div> */}
+      
+    </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  let experiences = [];
+  await firebaseDatabase.ref().child("experiences").get().then(
+    snapshop => {
+      if (snapshop.exists()){
+        snapshop.forEach(function (doc) {          
+          experiences.push({
+            key: doc.key,
+            company: doc.val().company,
+            title: doc.val().title,
+            start_date: doc.val().start_date,
+            end_date: doc.val().end_date,
+            description: doc.val().description
+          })
+        })
+      }
+    }
+  ).catch( error => {
+    console.error(error);
+  })
+  
+  return {
+    props:{
+      experiences,
+    }
+  }
+
 }
