@@ -10,7 +10,7 @@ export default function Home( {experiences} ) {
   return (
     <Layout>
       <Head>
-        <title>My personel website</title>
+        <title>Clériston Martinelo's site</title>
       </Head>      
       <div className="text-center">
         <Image 
@@ -32,49 +32,18 @@ export default function Home( {experiences} ) {
             <Accordion key={`accordion_${xp.key}`} className="col-sm-12 col-md-10 col-lg-8 mb-2 gx-0">
             <Card key={`accordion_${xp.key}`}>
                 <Accordion.Toggle as={Card.Header} eventKey={xp.key}>
-                {xp.start_date} - {xp.end_date} - {xp.company} <br/>{xp.title}  - {index}            
+                {xp.start_date} - {xp.end_date} - {xp.title}<br/>
+                {xp.company} - {xp.location}
                 </Accordion.Toggle>
 
                 <Accordion.Collapse eventKey={xp.key}>
-                    <Card.Body>{xp.description}</Card.Body>
+                    <Card.Body dangerouslySetInnerHTML={{ __html: xp.description}}></Card.Body>
                 </Accordion.Collapse>
             </Card>                        
             </Accordion>
           ))}                 
-          </div>          
-      
+          </div>                
       </div>
-      
-      {/* <Accordion>
-        <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
-                TAB 1
-            </Accordion.Toggle>
-
-            <Accordion.Collapse eventKey="0">
-                <Card.Body>This is first tab body</Card.Body>
-            </Accordion.Collapse>
-        </Card>                        
-    </Accordion>
-     
-      <div className="row justify-content-md-center">      
-          <div className="col-sm-12 col-md-10 col-lg-8 accordion" id="accordionXP">        
-          {experiences.map( (xp) => (
-            <div className="accordion-item mb-2" key={xp.key}>
-              <h2 className="accordion-header" id="heading{xp.key}">        
-                <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{xp.key}" aria-expanded="false" aria-controls="collapse{xp.key}">
-                {xp.start_date} - {xp.end_date} - {xp.company} <br/>{xp.title}              
-                </button>              
-              </h2>
-              <div id="collapse{xp.key}" className="accordion-collapse collapse show" aria-labelledby="heading{xp.key}" data-bs-parent="#accordionXP">
-                <div className="accordion-body">
-                {xp.description}
-                </div>
-              </div>              
-            </div>          
-          ))}       
-        </div> */}
-      
     </Layout>
   )
 }
@@ -91,7 +60,8 @@ export const getStaticProps = async () => {
             title: doc.val().title,
             start_date: doc.val().start_date,
             end_date: doc.val().end_date,
-            description: doc.val().description
+            description: doc.val().description,
+            location: doc.val().location,
           })
         })
       }
