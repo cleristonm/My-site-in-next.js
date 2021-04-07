@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import Layout from '../components/layout'
 import {firebaseDatabase} from '../lib/firebaseUtils'
-import { Accordion, Card } from "react-bootstrap";
+import Experience from '../components/experience';
 
 
 export default function Home( {experiences} ) {
@@ -29,18 +29,7 @@ export default function Home( {experiences} ) {
       
         <div className="row justify-content-center">
           {experiences.map( (xp, index) => (
-            <Accordion key={`accordion_${xp.key}`} className="col-sm-12 col-md-10 col-lg-8 mb-2 gx-0">
-            <Card key={`accordion_${xp.key}`}>
-                <Accordion.Toggle as={Card.Header} eventKey={xp.key}>
-                {xp.start_date} - {xp.end_date} - {xp.title}<br/>
-                {xp.company} - {xp.location}
-                </Accordion.Toggle>
-
-                <Accordion.Collapse eventKey={xp.key}>
-                    <Card.Body dangerouslySetInnerHTML={{ __html: xp.description}}></Card.Body>
-                </Accordion.Collapse>
-            </Card>                        
-            </Accordion>
+            <Experience data={xp}/>            
           ))}                 
           </div>                
       </div>
