@@ -29,7 +29,7 @@ export default function Home( {experiences} ) {
       
         <div className="row justify-content-center">
           {experiences.map( (xp, index) => (
-            <Experience data={xp}/>            
+            <Experience data={xp} key={index}/>            
           ))}                 
           </div>                
       </div>
