@@ -25,14 +25,14 @@ export default function Home( {experiences} ) {
         <h1 className="h1 fw-bold">Cleriston Martinelo</h1>
         <p className="lead mb-4">Software Developer</p>      
       </div>
-      <div className="container">                      
-      
+      <div className="container">                            
         <div className="row justify-content-center">
           {experiences.map( (xp, index) => (
             <Experience data={xp} key={index}/>            
           ))}                 
           </div>                
-      </div>
+      </div>  
+          
     </Layout>
   )
 }

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./footer";
 
 export default function Layout({ children }){
     return (
@@ -13,7 +14,7 @@ export default function Layout({ children }){
         <div className="container mt-5">
             {children}
         </div>
-        
+        <Footer/>
         </>
     )
     
