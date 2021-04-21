@@ -12,13 +12,11 @@ export default function Layout({ children }){
             <meta name="twitter:card" content="summary_large_image" />
             <title>Clériston Martinelo</title>
         </Head>                
-        <div className="container mt-5 text-center">
-            <Badge />   
-
-            
-                <div class="text-center">
-                    {children}            
-                </div>       
+        <div className="container mt-5 ">
+            <Badge />               
+            <div className="container-fluid">
+                {children}            
+            </div>       
                 
         </div>        
         </>

@@ -1,24 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
-import { Badge } from 'react-bootstrap'
 
 import Layout from '../components/layout'
 
 
-export default function Home( {experiences} ) {
+export default function Home( ) {
   return (
-    <Layout>      
-      <Link href="/experiences"><a>Experiences</a></Link>          
+    <Layout>                  
+      <div className="mx-auto" style={{maxWidth:'450px'}}>
+      <blockquote className="blockquote">
+        <p >I am just a lifelong learner. You can find on this site some information about  
+        my <Link href="/experiences"><a>experience</a></Link>, <Link href="/education"><a>education</a></Link>, <Link href="/courses"><a>courses</a></Link> and <Link href="/skills"><a>skills</a></Link>.  
+        </p>
+        </blockquote>
+      </div>
+      
     </Layout>
   )
-}
-
-export const getStaticProps = async () => {  
-  return {
-    props:{
-      
-    }
-  }
-
 }

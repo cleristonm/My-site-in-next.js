@@ -16,7 +16,7 @@ function Experience(props) {
   }, []);
   
   return (
-      <div class="d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
       <Accordion key={`accordion_${props.data.key}`} className="col-sm-12 col-md-10 col-lg-8 mb-2 gx-0">
         <Card key={`accordion_${props.data.key}`} onClick={toogleStatus}>
           

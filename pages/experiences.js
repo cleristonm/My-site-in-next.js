@@ -1,14 +1,13 @@
-import Head from 'next/head'
-
-
 import Layout from '../components/layout'
 import {firebaseDatabase} from '../lib/firebaseUtils'
-import Experience from '../components/experience';
+import Experience from '../components/Experience';
+import Navbar from '../components/Navbar';
 
 
-export default function Home( {experiences} ) {
+export default function Experiences( {experiences} ) {
   return (
     <Layout>      
+        <Navbar page="experiences"/>
         {experiences.map( (xp, index) => (
             <Experience data={xp} key={index}/>            
         ))} 

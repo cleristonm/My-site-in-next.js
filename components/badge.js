@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Badge(){
     return (
-        <>
+        <div className="text-center">
             <Image 
                 priority
                 src="/images/profile.jpeg"
@@ -15,6 +15,7 @@ export default function Badge(){
             
             <h1 className="h1 fw-bold">Cleriston Martinelo</h1>
             <p className="lead mb-4">Software Developer</p>      
-        </>
+        </div>
+
     )
 }
