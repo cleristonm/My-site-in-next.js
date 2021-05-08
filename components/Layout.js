@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Badge from '../components/badge'
+import Badge from './badge'
 
 export default function Layout({ children }){
     return (

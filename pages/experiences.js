@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import {firebaseDatabase} from '../lib/firebaseUtils'
 import Experience from '../components/Experience';
 import Navbar from '../components/Navbar';
