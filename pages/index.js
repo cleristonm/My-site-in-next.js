@@ -10,7 +10,7 @@ export default function Home( {experiences} ) {
   return (
     <Layout>
       <Head>
-        <title>Clériston Martinelo's site</title>
+        <title>Clériston Martinelo's website</title>
       </Head>      
       <div className="text-center">
         <Image 
@@ -22,7 +22,7 @@ export default function Home( {experiences} ) {
             alt="My photo profile"
         />
         
-        <h1 className="h1 fw-bold">Cleriston Martinelo</h1>
+        <h1 className="h1 fw-bold">Clériston Martinelo</h1>
         <p className="lead mb-4">Software Developer</p>      
       </div>
       <div className="container">                            
