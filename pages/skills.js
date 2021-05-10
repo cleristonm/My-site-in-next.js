@@ -3,7 +3,7 @@ import {firebaseDatabase} from '../lib/firebaseUtils'
 import Navbar from '../components/Navbar';
 import Skills from '../components/Skills';
 
-export default function Skills( {skills} ) {
+export default function SkillsPage( {skills} ) {
   return (
     <Layout>      
         <Navbar page="skills"/>
