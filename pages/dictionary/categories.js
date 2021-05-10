@@ -13,18 +13,16 @@ export default function Categories( {categories} ) {
       <p className="ms-3"><GB/> I made this dictionary to help me in my day to day.
          I hope it can be helpful for you too. 
          For now, I just use English, French and Portuguese. 
-         The sentences are focus in the Quebec 
+         The sentences are focused on Quebec 
          French and Brazilian Portuguese (my mother tongue)</p>
-      <p className="ms-3"><FR/> J'ai fait ce dictionnaire pour m'aider au mon quotidien. 
-        J'espère que cela peut être utile pour vous aussi. 
-        Pour l'instant, je viens d'utiliser l'anglais, l
-        e français et le portugais. 
-        Les phrases sont axées sur le Français Québécois et
-        Portugais Brésilien (ma langue maternelle)</p>
+      <p className="ms-3"><FR/>  J'ai fait ce dictionnaire pour m'aider dans mon quotidien. 
+      J'espère que vous le trouverez utile aussi. 
+      Pour l'instant, je utilise l'anglais, le français et le portugais. 
+      Les phrases sont axées sur le français québécois et le portugais brésilien (ma langue maternelle) </p>
       <p className="ms-3"><BR/> Eu fiz este dicionário para me ajudar no
         meu dia a dia. Espero que possa ser útil para você 
         também. Por enquanto, estou usando inglês, francês e português. 
-        As frases estão focadas no Francês do Quebec e Português do Brasil (minha língua materna)</p>
+        As frases estão focadas no francês do quebequense e português brasileiro (minha língua materna)</p>
         
       <h2 className="text-center">Categories / Catégories / Categorias</h2>
       
