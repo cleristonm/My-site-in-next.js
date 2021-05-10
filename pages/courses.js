@@ -5,7 +5,7 @@ import Course from '../components/Course';
 import { dynamicSort } from '../lib/util';
 
 
-export default function Home( {courses} ) {
+export default function Courses( {courses} ) {
   return (
     <Layout>      
         <Navbar page="courses"/>
