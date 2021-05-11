@@ -8,8 +8,8 @@ export default function SkillsPage( {skills} ) {
     <Layout>      
         <Navbar page="skills"/>
         <div className="container">
-          <div class="row justify-content-md-center mt-3">
-            <div class="col col-lg-8 col-md-12">
+          <div className="row justify-content-md-center mt-3">
+            <div className="col col-lg-8 col-md-12">
               <Skills skills={skills}/>        
             </div>
           </div>          

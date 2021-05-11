@@ -22,7 +22,7 @@ export default function Categories( {categories} ) {
       <p className="ms-3"><BR/> Eu fiz este dicionário para me ajudar no
         meu dia a dia. Espero que possa ser útil para você 
         também. Por enquanto, estou usando inglês, francês e português. 
-        As frases estão focadas no francês do quebequense e português brasileiro (minha língua materna)</p>
+        As frases estão focadas no francês quebequense e português brasileiro (minha língua materna)</p>
         
       <h2 className="text-center">Categories / Catégories / Categorias</h2>
       

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Badge from './badge'
+import MenuDictonary from "./MenuDictionary";
 
 export default function Layout2Columns({ children }){
     return (
@@ -15,7 +16,8 @@ export default function Layout2Columns({ children }){
             <div className="container" key="main_container">
                 <div className="row" key="main_row">
                     <div className="col-lg-2 col-md-3 col-sm-12">
-                        <Badge />                           
+                        <Badge showTitle="false"/>   
+                        <MenuDictonary/>                        
                     </div>
                     <div className="col-lg-10 col-md-9 col-sm-12 pt-md-5">
                         {children}                                

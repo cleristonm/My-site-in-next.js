@@ -13,7 +13,7 @@ export default function Layout({ children }){
             <title>Clériston Martinelo</title>
         </Head>                
         <div className="container mt-5 ">
-            <Badge />               
+            <Badge showTitle="true"/>               
             <div className="container-fluid">
                 {children}            
             </div>       
