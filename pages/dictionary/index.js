@@ -28,13 +28,13 @@ export default function Categories( {categories} ) {
         também. Por enquanto, estou usando inglês, francês e português. 
         As frases estão focadas no francês quebequense e português brasileiro (minha língua materna)</p>
         
-      <h2 className="text-center">Categories / Catégories / Categorias</h2>
+      <h2 className="text-center pt-4">Categories / Catégories / Categorias</h2>
       
       <div className="container">
         <div className="row">
           {categories.map( (cat, index) => (
             <div className="col-lg-4 col-md-6 col-sm-12 my-2" key={cat.key}>
-              <Link href={`terms/${cat.key}`}>
+              <Link href={`/dictionary/terms/${cat.key}`}>
                 <a>{cat.en} / {cat.fr} / {cat.pt_br}</a>
               </Link>
             </div>
