@@ -4,8 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 
-
-
 function MenuDictonary(props) {    
     return ( 
         <>  
@@ -13,8 +11,7 @@ function MenuDictonary(props) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
             <Nav
-            className="mr-auto my-2 my-lg-0 flex-column"            
-            navbarScroll
+            className="mr-auto my-2 my-lg-0 flex-column"                        
             >
                 <Nav.Link href="/">
                     <Link href="/">

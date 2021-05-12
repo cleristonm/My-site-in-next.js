@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import {firebaseDatabase} from '../../../lib/firebaseUtils'
 
 import {BR, GB, FR} from '../../../components/Flags'
@@ -6,6 +5,10 @@ import Layout2Columns from '../../../components/Layout2Columns'
 import Link from 'next/link'
 import { faArrowAltCircleUp, faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Gender from '../../../components/Gender'
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; /* eslint-disable import/first */
 
 export default function Term( {terms, category} ) {  
   return (
@@ -25,13 +28,13 @@ export default function Term( {terms, category} ) {
               }
               {term.fr != "" &&
                 <blockquote className="blockquote mb-0">
-                  <p><FR/> {term.fr}</p>
+                  <p><FR/> {term.fr} <Gender gender={term.gender_fr}/></p>
                   {term.phrase_fr != "" && <footer className="blockquote-footer">{term.phrase_fr}</footer>}
                 </blockquote>
               }
               {term.pt_br != "" &&
                 <blockquote className="blockquote mb-0">
-                  <p><BR/> {term.pt_br}</p>
+                  <p><BR/> {term.pt_br} <Gender gender={term.gender_pt_br}/></p>
                   {term.phrase_pt_br != "" && <footer className="blockquote-footer">{term.phrase_pt_br}</footer>}
                 </blockquote>
               }
@@ -60,8 +63,10 @@ export async function getStaticProps(context) {
               phrase_en: doc.val().phrase_en,
               fr: doc.val().fr,
               phrase_fr: doc.val().phrase_fr,
+              gender_fr: doc.val().gender_fr,
               pt_br: doc.val().pt_br,
               phrase_pt_br: doc.val().phrase_pt_br,
+              gender_pt_br: doc.val().gender_pt_br,
             })
           })
         }

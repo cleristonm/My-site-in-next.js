@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Badge from './badge'
+import Badge from './Badge'
 import MenuDictonary from "./MenuDictionary";
 
 export default function Layout2Columns({ children }){
