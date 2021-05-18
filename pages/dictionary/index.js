@@ -69,6 +69,7 @@ export const getStaticProps = async () => {
     console.error(error);
   })
   categories.sort(dynamicSort("en"));
+  
   return {
     props:{
       categories,
