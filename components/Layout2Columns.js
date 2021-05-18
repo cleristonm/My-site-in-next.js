@@ -23,7 +23,10 @@ export default function Layout2Columns({ children }){
                         {children}                                
                     </div>                
                 </div>
-            </div>        
+            </div>   
+            <footer className="py-3">
+                
+            </footer>      
         </>
     )    
 }
