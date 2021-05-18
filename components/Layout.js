@@ -9,7 +9,7 @@ export default function Layout({ children }){
             <meta
                 name="description"
                 content="Personal site of Clériston Martinelo"/>                                
-            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:card" content="summary_large_image" />            
             <title>Clériston Martinelo</title>
         </Head>                
         <div className="container mt-5 ">
