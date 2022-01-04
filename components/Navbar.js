@@ -16,6 +16,11 @@ function Navbar(props) {
                     <a className="nav-link">Blog</a>
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link href="/dictionary/">
+                    <a className="nav-link">Dictionary</a>
+                </Link>
+            </li>
         </ul>
         <ul className="nav justify-content-center">            
             <NavbarItem itemActive={props.page ==='experiences'} text="Experience" link="/experiences"/>

@@ -5,7 +5,7 @@ import Education from '../components/Education';
 import { dynamicSort } from '../lib/util';
 
 
-export default function Home( {education} ) {
+export default function EducationPage( {education} ) {
   return (
     <Layout>      
         <Navbar page="education"/>

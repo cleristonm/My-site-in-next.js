@@ -6,7 +6,7 @@ function Skills(props) {
         <>
         <div>
             {skillArray.map( (skill) => (
-                <div class="btn btn-info btn-sm m-1" style={{cursor: "default"}}>{skill}</div>            
+                <div className="btn btn-info btn-sm m-1" style={{cursor: "default"}}>{skill}</div>            
             ))}
         </div>
         </>

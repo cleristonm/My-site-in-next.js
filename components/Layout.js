@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Badge from './badge'
+import Badge from './Badge'
 
 export default function Layout({ children }){
     return (
@@ -9,11 +9,11 @@ export default function Layout({ children }){
             <meta
                 name="description"
                 content="Personal site of Clériston Martinelo"/>                                
-            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:card" content="summary_large_image" />            
             <title>Clériston Martinelo</title>
         </Head>                
         <div className="container mt-5 ">
-            <Badge />               
+            <Badge showTitle="true"/>               
             <div className="container-fluid">
                 {children}            
             </div>       

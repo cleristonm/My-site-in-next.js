@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function Badge(){
+export default function Badge(props){
     return (
         <div className="text-center">
             <Image 
@@ -14,7 +14,7 @@ export default function Badge(){
             />
             
             <h1 className="h1 fw-bold">Cleriston Martinelo</h1>
-            <p className="lead mb-4">Software Developer</p>      
+            {props.showTitle == "true" && <p className="lead mb-4">Software Developer</p>}
         </div>
 
     )

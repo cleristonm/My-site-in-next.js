@@ -2,12 +2,6 @@ import { faCalendarWeek, faCaretDown, faCaretUp, faSchool, faStickyNote } from '
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useState } from 'react';
 
-
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
-config.autoAddCss = false; /* eslint-disable import/first */
-
-
 function Education(props) {   
   const [isOpened, setIsOpened] = useState(true);
 

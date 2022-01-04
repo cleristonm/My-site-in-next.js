@@ -2,13 +2,7 @@ import { faCalendarWeek, faSchool, faStickyNote } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback, useState } from 'react';
 
-
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
 import { formatIsoStringDate } from '../lib/util';
-
-config.autoAddCss = false; /* eslint-disable import/first */
-
 
 function Course(props) {   
   const [isOpened, setIsOpened] = useState(true);
